@@ -14,11 +14,9 @@ while getopts "h?H:" opt; do
 done
 
 ${DOCKER_BUILDER} ${HOST} \
-		--images-name-prefix "build-postfix-" \
-		--final-image-name "postfix:build" \
+		--images-name-prefix "build-dib-" \
+		--final-image-name "docker-image-builder:build" \
 		--remove-builds \
 		first \
-		docker-base \
-		docker-runit \
-		docker-postfix
+		../docker-image-builder
 	
